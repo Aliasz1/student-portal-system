@@ -1,11 +1,11 @@
-package Unclean;
+package Clean;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 import Lib.Student;
 
-public class StudentPortal extends UnicastRemoteObject implements SPInt{
+public class StudentPortal extends UnicastRemoteObject implements StudentPortalInterface{
 
     Student s;
 
@@ -13,7 +13,7 @@ public class StudentPortal extends UnicastRemoteObject implements SPInt{
         super();
     }
     
-    public List<Student> getall() throws RemoteException{
+    public List<Student> getallstudents() throws RemoteException{
         return SPServer.db.getStudents();
     }
 

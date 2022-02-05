@@ -1,12 +1,13 @@
-package Unclean;
+package Clean;
 import java.util.List;
+
 import Lib.Database;
 import Lib.Student;
 
 public class Authentication {
 	
 	public static boolean auth(Database dblogin, int i, String pw) {
-		boolean logged = false;
+		boolean logged_on = false;
 		try{
 			List<Student> s = dblogin.getStudents();
 			boolean checkid, checkpw;
@@ -15,14 +16,14 @@ public class Authentication {
 				checkid = check.getID() == i;
 				checkpw = check.getPassword().equals(pw);
 			 	if (checkid == true && checkpw == true) {
-			 		logged = true;
+			 		logged_on = true;
 			 	}
 			}
-			return logged;
+			return logged_on;
 		}
 		catch (Exception e){
 			System.out.print(e.toString());
 			}
-		return logged;
+		return logged_on;
 	}
 }
