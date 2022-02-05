@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import Clean.SPServer;
+import cc_clean_code.SPServer;
 		
 public class Student implements Serializable {
 	
